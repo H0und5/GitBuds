@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600&display=swap');
+
+:root { 
+  --fontPrimary: Assistant, sans-serifs;
+  --fontSecondary: Encode Sans, sans-serifs;
+  --primary-bg-color: #F3F4F4;
+}
+
+html {
+  background-color: var(--primary-bg-color);
+  display: flex;
+}
+
+.container {
+  background-color: var(--primary-bg-color);
+}
+
+.container h1 {
+  font-family: var(--fontPrimary);
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.header {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+}
