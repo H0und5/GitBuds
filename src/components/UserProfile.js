@@ -1,93 +1,127 @@
-import linkOut from '../images/external-link.svg';
-import classes from './UserProfile.module.css';
+// import icons
+import linkOut from "../images/external-link.svg";
+import emailOut from "../images/external-email.svg";
+import siteOut from "../images/external-site.svg";
+import twitterOut from "../images/external-twitter.svg";
 
-const UserProfile = (props) => {
-  const {
-    login,
-    bio,
-    blog,
-    company,
-    email,
-    followers,
-    following,
-    location,
-    name,
-    public_gists,
-    public_repos,
-    twitter_username,
-    updated_at,
-    url,
-  } = props;
 
+// import css classes
+import classes from "./UserProfile.module.css";
+
+
+// define UserProfile component below.
+const UserProfile = ({
+  login,
+  bio,
+  blog,
+  company,
+  email,
+  followers,
+  following,
+  location,
+  name,
+  public_gists,
+  public_repos,
+  twitter_username,
+  updated_at,
+  url,
+}) => {
+
+  // needs condtional
+
+  let nameUpdated = name;
+
+  if (name.length > 8) {
+    let nameUpdated = name.substring(0, 8).concat("...");
+
+    let nameUp = nameUpdated;
+  } 
+
+  // Updating name string value with character trim
+
+  // Updating company string value with character trim
+
+  let companyUpdated = company.substring(0, 8).concat("...");
+
+  // Updating last update stirng value with character trim
+  let lastUpdatedMonth = updated_at.substring(5, 7);
+  let lastUpdatedDay = updated_at.substring(8, 10);
+
+  let lastUpdated = lastUpdatedMonth.concat(`/${lastUpdatedDay}`);
+
+  console.log(lastUpdatedMonth, lastUpdatedDay, lastUpdated);
+
+  // Return JSX
   return (
     <div className={classes.userProfileContainer}>
-      
       <div className={classes.userProfileHeader}>
         <h2>@{login}</h2>
-        <a href={url} target="_blank" rel="noreferrer"><img src={linkOut} alt="" width="20" height="20" /></a>
+        <a href={url} target="_blank" rel="noreferrer">
+          <img src={linkOut} alt="" width="20" height="20" />
+        </a>
       </div>
-      
+
       <div className={classes.userProfileBio}>{bio}</div>
 
       <div className={classes.userProfileStats}>
         <div className={classes.userProfileStatRow}>
+          {/* Name */}
           <div className={classes.userProfileStatBox}>
             <div className={classes.userProfileStatBoxContent}>
-              <p>Name</p> 
-              <h4>{name}</h4> 
+              <p>Name</p>
+              <h4>{nameUpdated}</h4>
             </div>
-            <div className={classes.userProfileStatBoxCutoff}></div>
           </div>
+          {/* Company */}
           <div className={classes.userProfileStatBox}>
             <div className={classes.userProfileStatBoxContent}>
-              <p>Company</p> 
-              <h4>{company}</h4> 
+              <p>Company</p>
+              <h4>{companyUpdated}</h4>
             </div>
-            <div className={classes.userProfileStatBoxCutoff}></div>
           </div>
+          {/* Location */}
           <div className={classes.userProfileStatBox}>
             <div className={classes.userProfileStatBoxContent}>
-              <p>Location</p> 
-              <h4>{location}</h4> 
+              <p>Location</p>
+              <h4>{location}</h4>
             </div>
-            <div className={classes.userProfileStatBoxCutoff}></div> 
           </div>
+          {/* Last Updated */}
           <div className={classes.userProfileStatBox}>
             <div className={classes.userProfileStatBoxContent}>
-              <p>Last Updated</p> 
-              <h4>{updated_at}</h4> 
+              <p>Last Update</p>
+              <h4>{lastUpdated}</h4>
             </div>
-            <div className={classes.userProfileStatBoxCutoff}></div>
           </div>
         </div>
         <div className={classes.userProfileStatRow}>
+          {/* Public Gists */}
           <div className={classes.userProfileStatBox}>
             <div className={classes.userProfileStatBoxContent}>
-              <p>Public Gists</p> 
-              <h4>{public_gists}</h4> 
+              <p>Public Gists</p>
+              <h4>{public_gists}</h4>
             </div>
-            <div className={classes.userProfileStatBoxCutoff}></div>
           </div>
+          {/* Public Repos */}
           <div className={classes.userProfileStatBox}>
             <div className={classes.userProfileStatBoxContent}>
-              <p>Public Repos</p> 
-              <h4>{public_repos}</h4> 
+              <p>Public Repos</p>
+              <h4>{public_repos}</h4>
             </div>
-            <div className={classes.userProfileStatBoxCutoff}></div>
           </div>
+          {/* Followers */}
           <div className={classes.userProfileStatBox}>
             <div className={classes.userProfileStatBoxContent}>
-              <p>Followers</p> 
-              <h4>{followers}</h4> 
+              <p>Followers</p>
+              <h4>{followers}</h4>
             </div>
-            <div className={classes.userProfileStatBoxCutoff}></div>
           </div>
+          {/* Following */}
           <div className={classes.userProfileStatBox}>
             <div className={classes.userProfileStatBoxContent}>
-              <p>Followers</p> 
-              <h4>{following}</h4> 
+              <p>Following</p>
+              <h4>{following}</h4>
             </div>
-            <div className={classes.userProfileStatBoxCutoff}></div>
           </div>
         </div>
       </div>
@@ -96,16 +130,21 @@ const UserProfile = (props) => {
 
       <div className={classes.userProfileFooter}>
         <div className={classes.userProfileLinks}>
-          <a href={email}><p>Email</p></a>
+          <a href={email} target="_blank" rel="noreferrer">
+            <img src={emailOut} alt="" width="20" height="20" />
+          </a>
         </div>
         <div className={classes.userProfileLinks}>
-          <a href={blog}><p>Website</p></a>
+          <a href={blog} target="_blank" rel="noreferrer">
+            <img src={siteOut} alt="" width="20" height="20" />
+          </a>
         </div>
         <div className={classes.userProfileLinks}>
-          <a href={twitter_username}><p>Twitter</p></a>
+          <a href={`https://twitter.com/${twitter_username}`} target="_blank" rel="noreferrer">
+            <img src={twitterOut} alt="" width="20" height="20" />
+          </a>
         </div>
       </div>
-    
     </div>
   );
 };

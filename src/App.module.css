@@ -33,3 +33,10 @@ html {
   justify-content: center;
   justify-items: center;
 }
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background-color: var(--primary-border-color);
+  margin: 2rem 0 0rem 0;
+}

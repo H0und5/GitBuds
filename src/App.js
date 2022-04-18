@@ -54,6 +54,8 @@ const App = () => {
         <h1>GitBuds</h1>
         <SearchInput />
       </div>
+
+      <div className={classes.divider}></div>
       {profiles.map(profile => <UserProfile
         key={profile.id}
         login={profile.login}

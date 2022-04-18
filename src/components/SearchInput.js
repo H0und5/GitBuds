@@ -1,11 +1,13 @@
+import classes from './SearchInput.module.css';
+
 
 const SearchInput = () => {
 
 
 
   return (
-    <div>
-      <input placeholder="Search here"></input>
+    <div className={classes.searchContainer}>
+      <input placeholder="Search for info on someone’s GitHub followers"></input>
     </div>
   )
 }
