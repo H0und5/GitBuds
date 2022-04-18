@@ -1,14 +1,24 @@
+import { useRef } from 'react'; 
+
 import classes from './SearchInput.module.css';
 
 
-const SearchInput = () => {
+const SearchInput = ({searchEntered}) => {
 
+  const enteredValue = useRef();
 
+  const onSubmitHandler = (event) => {
+    event.preventDefault();
+
+    
+
+    searchEntered(enteredValue)
+  }
 
   return (
-    <div className={classes.searchContainer}>
-      <input placeholder="Search for info on someone’s GitHub followers"></input>
-    </div>
+    <form onSubmit={onSubmitHandler} className={classes.searchContainer}>
+      <input type="text" placeholder="Search for info on someone’s GitHub followers" ref={enteredValue}></input>
+    </form>
   )
 }
 

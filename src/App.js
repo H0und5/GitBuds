@@ -48,11 +48,17 @@ const App = () => {
 
   console.log(profiles);
 
+  const onSearchEnteredHandler = (value) => {
+    console.log(value.current.value)
+  }
+
   return (
     <div className={classes.container}>
       <div className={classes.header}>
         <h1>GitBuds</h1>
-        <SearchInput />
+        <SearchInput 
+          searchEntered={onSearchEnteredHandler}
+        />
       </div>
 
       <div className={classes.divider}></div>

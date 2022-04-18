@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 // import icons
 import linkOut from "../images/external-link.svg";
 import emailOut from "../images/external-email.svg";
@@ -27,14 +29,12 @@ const UserProfile = ({
   url,
 }) => {
 
-  // needs condtional
+  const [ passedName, setPassedName ] = useState(name)
 
-  let nameUpdated = name;
+  // name.length > 8 ? name.substring(0, 8).concat("...") : nameUpdated
 
   if (name.length > 8) {
-    let nameUpdated = name.substring(0, 8).concat("...");
-
-    let nameUp = nameUpdated;
+    setPassedName(name.substring(0, 8).concat("..."))
   } 
 
   // Updating name string value with character trim
@@ -69,7 +69,7 @@ const UserProfile = ({
           <div className={classes.userProfileStatBox}>
             <div className={classes.userProfileStatBoxContent}>
               <p>Name</p>
-              <h4>{nameUpdated}</h4>
+              <h4>{passedName}</h4>
             </div>
           </div>
           {/* Company */}
