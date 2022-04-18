@@ -31,25 +31,79 @@ const UserProfile = (props) => {
 
       <div className={classes.userProfileStats}>
         <div className={classes.userProfileStatRow}>
-          <div>Name: {name}</div>
-          <div>Company: {company}</div>
-          <div>Location: {location}</div>
-          <div>Last Update: {updated_at}</div>
+          <div className={classes.userProfileStatBox}>
+            <div className={classes.userProfileStatBoxContent}>
+              <p>Name</p> 
+              <h4>{name}</h4> 
+            </div>
+            <div className={classes.userProfileStatBoxCutoff}></div>
+          </div>
+          <div className={classes.userProfileStatBox}>
+            <div className={classes.userProfileStatBoxContent}>
+              <p>Company</p> 
+              <h4>{company}</h4> 
+            </div>
+            <div className={classes.userProfileStatBoxCutoff}></div>
+          </div>
+          <div className={classes.userProfileStatBox}>
+            <div className={classes.userProfileStatBoxContent}>
+              <p>Location</p> 
+              <h4>{location}</h4> 
+            </div>
+            <div className={classes.userProfileStatBoxCutoff}></div> 
+          </div>
+          <div className={classes.userProfileStatBox}>
+            <div className={classes.userProfileStatBoxContent}>
+              <p>Last Updated</p> 
+              <h4>{updated_at}</h4> 
+            </div>
+            <div className={classes.userProfileStatBoxCutoff}></div>
+          </div>
         </div>
         <div className={classes.userProfileStatRow}>
-          <div>Public Gists: {public_gists}</div>
-          <div>Public Repos: {public_repos}</div>
-          <div>Followers: {followers}</div>
-          <div>Following: {following}</div>
+          <div className={classes.userProfileStatBox}>
+            <div className={classes.userProfileStatBoxContent}>
+              <p>Public Gists</p> 
+              <h4>{public_gists}</h4> 
+            </div>
+            <div className={classes.userProfileStatBoxCutoff}></div>
+          </div>
+          <div className={classes.userProfileStatBox}>
+            <div className={classes.userProfileStatBoxContent}>
+              <p>Public Repos</p> 
+              <h4>{public_repos}</h4> 
+            </div>
+            <div className={classes.userProfileStatBoxCutoff}></div>
+          </div>
+          <div className={classes.userProfileStatBox}>
+            <div className={classes.userProfileStatBoxContent}>
+              <p>Followers</p> 
+              <h4>{followers}</h4> 
+            </div>
+            <div className={classes.userProfileStatBoxCutoff}></div>
+          </div>
+          <div className={classes.userProfileStatBox}>
+            <div className={classes.userProfileStatBoxContent}>
+              <p>Followers</p> 
+              <h4>{following}</h4> 
+            </div>
+            <div className={classes.userProfileStatBoxCutoff}></div>
+          </div>
         </div>
       </div>
 
       <div className={classes.userProfileDivider}></div>
 
       <div className={classes.userProfileFooter}>
-        <div>Email: {email}</div>
-        <div>Website: {blog}</div>
-        <div>Twitter: {twitter_username}</div>
+        <div className={classes.userProfileLinks}>
+          <a href={email}><p>Email</p></a>
+        </div>
+        <div className={classes.userProfileLinks}>
+          <a href={blog}><p>Website</p></a>
+        </div>
+        <div className={classes.userProfileLinks}>
+          <a href={twitter_username}><p>Twitter</p></a>
+        </div>
       </div>
     
     </div>

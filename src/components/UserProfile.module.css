@@ -49,6 +49,7 @@
   margin: 1rem 0 1rem 0;
   display: flex;
   justify-content: space-between;
+
 }
 
 .userProfileDivider {
@@ -59,5 +60,52 @@
 
 .userProfileFooter {
   display: flex;
-  margin: 1rem 0 1rem 0;
+  margin: 1rem 0 0 0;
+}
+
+.userProfileStatBox {
+  padding: 1rem;
+  border: 1px solid var(--primary-border-color);
+  min-width: 5.4rem;
+  max-width: 5.4rem;
+  min-height: 5.4rem;
+  max-height: 5.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.userProfileStatBoxContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.userProfileStatBoxCutoff {
+  height: 100%;
+  width: 2rem;
+  background-color: var(--primary-bg-color);
+}
+
+.userProfileStatBox p {
+  font-family: var(--fontPrimary);
+  font-weight: 400;
+  font-size: .9rem;
+  color: var(--secondary-dark-color);
+  margin: 0;
+
+}
+
+.userProfileStatBox h4 {
+  font-family: var(--fontPrimary);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--primary-dark-color);
+  margin: 0;
+  white-space: nowrap;
+}
+
+.userProfileLinks {
+
 }
