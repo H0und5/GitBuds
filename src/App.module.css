@@ -5,21 +5,27 @@
   --fontPrimary: Assistant, sans-serifs;
   --fontSecondary: Encode Sans, sans-serifs;
   --primary-bg-color: #F3F4F4;
+  --primary-border-color: #D9D9D9;
+  --primary-dark-color: #141417;
 }
 
 html {
   background-color: var(--primary-bg-color);
-  display: flex;
 }
 
 .container {
   background-color: var(--primary-bg-color);
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  
 }
 
 .container h1 {
   font-family: var(--fontPrimary);
   font-weight: 600;
   font-size: 2rem;
+  color: var(--primary-dark-color);
 }
 
 .header {

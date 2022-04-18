@@ -1,3 +1,6 @@
+import linkOut from '../images/external-link.svg';
+import classes from './UserProfile.module.css';
+
 const UserProfile = (props) => {
   const {
     login,
@@ -17,23 +20,23 @@ const UserProfile = (props) => {
   } = props;
 
   return (
-    <div>
+    <div className={classes.userProfileContainer}>
       
-      <div>
-        <h2>{login}</h2>
-        <a href={url}><img src="./images/external-link.svg" /></a>
+      <div className={classes.userProfileHeader}>
+        <h2>@{login}</h2>
+        <a href={url} target="_blank" rel="noreferrer"><img src={linkOut} alt="" width="20" height="20" /></a>
       </div>
       
-      <div>Bio: {bio}</div>
+      <div className={classes.userProfileBio}>{bio}</div>
 
-      <div>
-        <div>
+      <div className={classes.userProfileStats}>
+        <div className={classes.userProfileStatRow}>
           <div>Name: {name}</div>
           <div>Company: {company}</div>
           <div>Location: {location}</div>
           <div>Last Update: {updated_at}</div>
         </div>
-        <div>
+        <div className={classes.userProfileStatRow}>
           <div>Public Gists: {public_gists}</div>
           <div>Public Repos: {public_repos}</div>
           <div>Followers: {followers}</div>
@@ -41,7 +44,9 @@ const UserProfile = (props) => {
         </div>
       </div>
 
-      <div>
+      <div className={classes.userProfileDivider}></div>
+
+      <div className={classes.userProfileFooter}>
         <div>Email: {email}</div>
         <div>Website: {blog}</div>
         <div>Twitter: {twitter_username}</div>

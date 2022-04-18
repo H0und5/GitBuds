@@ -6,14 +6,17 @@ import UserProfile from './components/UserProfile';
 
 const App = () => {
   // state of follower profiles
-  const [profiles, setProfiles] = useState();
+  const [profiles, setProfiles] = useState([]);
 
   // Import 1 profile on load.
   useEffect(() => {
+
     fetch("https://api.github.com/users/D-Pagey")
       .then((data) => data.json())
       .then((databaseData) => {
         // const profile = Object.entries(databaseData);
+
+        console.log(databaseData)
 
         const initialRawProfile = {
           login: databaseData.login, 
@@ -31,28 +34,42 @@ const App = () => {
           public_repos: databaseData.public_repos,
           twitter_username: databaseData.twitter_username,
           updated_at: databaseData.updated_at,
-          url: databaseData.url,
+          url: databaseData.html_url,
         }
+    
+        console.log(initialRawProfile);
 
-        const initialUpdatedProfile = Object.values(initialRawProfile);
+        setProfiles(oldState => [...oldState, initialRawProfile]);
 
-        console.log(databaseData)
-        const profile = initialUpdatedProfile
-        console.log([profile])
-        
+        // const updatedProfiles = Object.entries(initialRawProfile);
 
-        setProfiles(profile);
       });
   }, []);
+
+  console.log(profiles);
 
   return (
     <div className={classes.container}>
       <div className={classes.header}>
-        <h1>GitBud</h1>
+        <h1>GitBuds</h1>
         <SearchInput />
       </div>
-      {profiles}
-      {console.log(profiles)}
+      {profiles.map(profile => <UserProfile 
+        login={profile.login}
+        bio={profile.bio}
+        blog={profile.blog}
+        company={profile.company}
+        email={profile.email}
+        followers={profile.followers}
+        following={profile.following}
+        location={profile.location}
+        name={profile.name}
+        public_gists={profile.public_gists}
+        public_repos={profile.public_repos}
+        twitter_username={profile.twitter_username}
+        updated_at={profile.updated_at}
+        url={profile.url}
+      />)}
 
     </div>
   );

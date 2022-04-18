@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600&display=swap');
+
+:root { 
+  --fontPrimary: Assistant, sans-serifs;
+  --fontSecondary: Encode Sans, sans-serifs;
+  --primary-bg-color: #F3F4F4;
+  --primary-border-color: #D9D9D9;
+  --primary-dark-color: #141417;
+  --secondary-dark-color: #7F7F7F;
+}
+
+.userProfileContainer{
+  font-family: var(--fontPrimary);
+  background-color: var(--primary-bg-color);
+  box-sizing: border-box;
+  border: 1px solid var(--primary-border-color);
+  width: 32rem;
+  padding: 1rem;
+  margin: 2rem 0 0 0;
+}
+
+.userProfileHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.userProfileHeader h2 {
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--primary-dark-color);
+}
+
+.userProfileBio {
+  font-family: var(--fontPrimary);
+  font-weight: 400;
+  font-size: .9rem;
+  color: var(--secondary-dark-color);
+  margin: 0 0 1rem 0;
+}
+
+.userProfileStats {
+  font-family: var(--fontPrimary);
+}
+
+.userProfileStatRow {
+  margin: 1rem 0 1rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.userProfileDivider {
+  height: 1px;
+  background-color: var(--primary-border-color);
+  margin: 1rem 0 1rem 0;
+}
+
+.userProfileFooter {
+  display: flex;
+  margin: 1rem 0 1rem 0;
+}
