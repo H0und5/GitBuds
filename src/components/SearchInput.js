@@ -13,11 +13,14 @@ const SearchInput = ({searchEntered}) => {
     
 
     searchEntered(enteredValue)
+
+    event.target.reset();
   }
 
   return (
     <form onSubmit={onSubmitHandler} className={classes.searchContainer}>
       <input type="text" placeholder="Search for info on someone’s GitHub followers" ref={enteredValue}></input>
+      <input type="submit" className={classes.searchContainerSubmit} />
     </form>
   )
 }

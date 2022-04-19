@@ -164,15 +164,27 @@ Mobile Responsiveness.
     max-width: 90vw;
   }
 
+  .userProfileContainer:hover{
+    width: 100%;
+    min-width: 90vw;
+    max-width: 90vw;
+  }
+
   .userProfileHeader {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: flex-start;
     margin-bottom: -.4rem;
   }
 
-  .userProfileStats {
+  /* .userProfileStats {
 
+  } */
+
+  .userProfileStatRow {
+    margin: -.6rem 0 1rem 0;
+    display: flex;
+    justify-content: space-between;
   }
   
   .userProfileHeader h2 {
@@ -181,6 +193,7 @@ Mobile Responsiveness.
 
   .userProfileBio {
     font-size: .8rem;
+    margin-bottom: 1.2rem;
   }
 
   .userProfileStatBoxContent {
@@ -196,25 +209,37 @@ Mobile Responsiveness.
   }
 
   .userProfileStatBox {
-    min-width: 8vw;
-    max-width: 8vw;
-    min-height: 8vw;
-    max-height: 8vw;
-    padding: 1rem;
+    padding: .4rem;
     margin: 0rem 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    transition: none;
+    width: 100%;
+    max-width: 15vw;
+    min-width: 9vw;
+    max-height: 12vw;
+    min-height: 10vw;
   }
 
   .userProfileStatBox:hover {
-    min-width: 8vw;
-    max-width: 8vw;
-    padding: 1rem;
-    margin: 2rem 0 0 0;
+    padding: .4rem;
+    margin: 0rem 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    transition: none;
+    width: 100%;
+    max-width: 15vw;
+    min-width: 9vw;
+    max-height: 12vw;
+    min-height: 10vw;
   }
   
   .userProfileStatBox p {
     font-family: var(--fontPrimary);
     font-weight: 400;
-    font-size: .7rem;
+    font-size: .64rem;
     color: var(--secondary-dark-color);
     margin: 0;
     white-space: nowrap;
@@ -224,7 +249,7 @@ Mobile Responsiveness.
   .userProfileStatBox h4 {
     font-family: var(--fontPrimary);
     font-weight: 550;
-    font-size: .8rem;
+    font-size: .7rem;
     color: var(--primary-dark-color);
     margin: 0;
     white-space: nowrap;
