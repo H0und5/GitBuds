@@ -24,3 +24,14 @@
   border: 1px solid var(--secondary-dark-color);
   outline: none;
 }
+
+@media screen and (max-width: 540px) {
+
+  .searchContainer input {
+    width: 100%;
+    min-width: 90vw;
+    max-width: 90vw;
+    box-sizing: border-box;
+  }
+
+}

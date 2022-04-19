@@ -33,9 +33,13 @@ const UserProfile = ({
 
   // name.length > 8 ? name.substring(0, 8).concat("...") : nameUpdated
 
-  if (name.length > 8) {
-    setPassedName(name.substring(0, 8).concat("..."))
-  } 
+  if (name == null) {
+    setPassedName('null');
+
+    return;
+  } else if (name.length > 8) {
+    setPassedName(name.substring(0, 8).concat("..."))  
+  }
 
   // Updating name string value with character trim
 

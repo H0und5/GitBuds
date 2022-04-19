@@ -11,7 +11,7 @@ const App = () => {
   // Import 1 profile on load.
   useEffect(() => {
 
-    fetch("https://api.github.com/users/D-Pagey")
+    fetch("https://api.github.com/users/H0und5")
       .then((data) => data.json())
       .then((databaseData) => {
         // const profile = Object.entries(databaseData);
@@ -50,6 +50,8 @@ const App = () => {
 
   const onSearchEnteredHandler = (value) => {
     console.log(value.current.value)
+
+
   }
 
   return (
