@@ -6,7 +6,7 @@ import UserProfile from './components/UserProfile';
 
 const App = () => {
   // state of follower profiles
-  const [profiles, setProfiles] = useState([]);
+  const [ profiles, setProfiles ] = useState([]);
 
   // Import 1 profile on load.
   useEffect(() => {
@@ -36,8 +36,6 @@ const App = () => {
           updated_at: databaseData.updated_at,
           url: databaseData.html_url,
         }
-    
-        console.log(initialRawProfile);
 
         setProfiles(oldState => [...oldState, initialRawProfile]);
 
@@ -46,13 +44,19 @@ const App = () => {
       });
   }, []);
 
-  console.log(profiles);
+  const onSearchEnteredHandler = (input) => {
 
-  const onSearchEnteredHandler = (value) => {
-    console.log(value.current.value)
+    console.log(input)
 
+    fetch(`https://api.github.com/users/${input}`)
+    .then(data => data.json())
+    .then(databaseData => {
+      console.log(databaseData)
+    })
 
   }
+
+
 
   return (
     <div className={classes.container}>

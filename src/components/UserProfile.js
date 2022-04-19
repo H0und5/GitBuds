@@ -53,8 +53,6 @@ const UserProfile = ({
 
   let lastUpdated = lastUpdatedMonth.concat(`/${lastUpdatedDay}`);
 
-  console.log(lastUpdatedMonth, lastUpdatedDay, lastUpdated);
-
   // Return JSX
   return (
     <div className={classes.userProfileContainer}>
