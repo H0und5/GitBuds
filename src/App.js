@@ -51,7 +51,13 @@ const App = () => {
     fetch(`https://api.github.com/users/${input}`)
     .then(data => data.json())
     .then(databaseData => {
-      console.log(databaseData)
+      console.log(databaseData.followers_url)
+
+      fetch(`${databaseData.followers_url}`)
+      .then(data => data.json())
+      .then(database => {
+        console.log(database)
+      })
     })
 
   }
