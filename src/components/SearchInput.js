@@ -17,9 +17,9 @@ const SearchInput = ({searchEntered}) => {
   const onSubmitHandler = (event) => {
     event.preventDefault();
 
-    console.log(enteredValue)
-
     searchEntered(enteredValue)
+
+    event.target.reset();
   }
 
   return (

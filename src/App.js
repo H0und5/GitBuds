@@ -51,12 +51,28 @@ const App = () => {
     fetch(`https://api.github.com/users/${input}`)
     .then(data => data.json())
     .then(databaseData => {
-      console.log(databaseData.followers_url)
+      
 
       fetch(`${databaseData.followers_url}`)
       .then(data => data.json())
       .then(database => {
-        console.log(database)
+        console.log(database, typeof database)
+
+        const followersURL = Object.entries(database)
+
+        const update = followersURL.map((follower) => {
+
+          const followedURL = follower[1].url;
+
+          return followedURL;
+
+        })
+
+        console.log(followersURL, update);
+
+        
+
+        
       })
     })
 
