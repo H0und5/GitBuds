@@ -64,8 +64,6 @@ const App = () => {
 
           const followedURL = follower[1].url;
 
-          // const followUpdate = []
-
           fetch(`${followedURL}`)
             .then(data => data.json())
             .then(followerDatabase => {
@@ -74,7 +72,28 @@ const App = () => {
 
               console.log(followerDatabase);
 
+              const followerProfile = {
+                login: follower.login, 
+                bio: follower.bio, 
+                blog: follower.blog, 
+                company: follower.company,
+                email: follower.email,
+                followers: follower.followers,
+                following: follower.following,
+                followers_url: follower.followers_url,
+                location: follower.location,
+                id: follower.id,
+                name: follower.name,
+                public_gists: follower.public_gists,
+                public_repos: follower.public_repos,
+                twitter_username: follower.twitter_username,
+                updated_at: follower.updated_at,
+                url: follower.html_url,
+              }
 
+              setProfiles(oldState => [...oldState, followerProfile])
+
+              
 
               return followerDatabase;
 
