@@ -64,14 +64,31 @@ const App = () => {
 
           const followedURL = follower[1].url;
 
+          // const followUpdate = []
+
+          fetch(`${followedURL}`)
+            .then(data => data.json())
+            .then(followerDatabase => {
+
+              // const arrayFollowerDatabase = Object.entries(followerDatabase);
+
+              console.log(followerDatabase);
+
+
+
+              return followerDatabase;
+
+
+
+            })
+
           return followedURL;
+
+
 
         })
 
         console.log(followersURL, update);
-
-        
-
         
       })
     })
