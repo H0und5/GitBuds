@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 // import icons
 import linkOut from "../images/external-link.svg";
 import emailOut from "../images/external-email.svg";
@@ -29,32 +27,36 @@ const UserProfile = ({
   url,
 }) => {
 
-  const [ passedName, setPassedName ] = useState(name)
 
   // name.length > 8 ? name.substring(0, 8).concat("...") : nameUpdated
 
+  let nameUpdated = name.toString();
+
   if (name == null) {
-    setPassedName('null');
+    nameUpdated = "None";
 
     return;
   } else if (name.length > 8) {
-    setPassedName(name.substring(0, 8).concat("..."))  
+    nameUpdated = name.substring(0, 8) + "...";
+
+    console.log(nameUpdated)
   }
 
   // Updating name string value with character trim
 
   // Updating company string value with character trim
 
-  let companyUpdated = ''
+  let companyUpdated = JSON.stringify(company)
 
-  if (company === null) {
+
+  if (companyUpdated === 'null') {
     companyUpdated = "None";
 
-    return;
+    console.log(typeof companyUpdated, companyUpdated)
   }
   
-  if (company.length > 8) {
-    companyUpdated = company.substring(0, 8) + "...";
+  if (companyUpdated.length > 8) {
+    companyUpdated = company.substring(0, 8).concat("...");
   }
 
   // Updating last update stirng value with character trim
@@ -81,7 +83,7 @@ const UserProfile = ({
           <div className={classes.userProfileStatBox}>
             <div className={classes.userProfileStatBoxContent}>
               <p>Name</p>
-              <h4>{passedName}</h4>
+              <h4>{nameUpdated}</h4>
             </div>
           </div>
           {/* Company */}
