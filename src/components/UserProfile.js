@@ -30,17 +30,25 @@ const UserProfile = ({
 
   // name.length > 8 ? name.substring(0, 8).concat("...") : nameUpdated
 
-  let nameUpdated = name.toString();
+  let nameUpdated = JSON.stringify(name)
 
-  if (name == null) {
+  if (nameUpdated === 'null') {
     nameUpdated = "None";
 
-    return;
-  } else if (name.length > 8) {
-    nameUpdated = name.substring(0, 8) + "...";
+    console.log(nameUpdated, typeof name)
+
+  } 
+  
+  if (name.length > 8) {
+    nameUpdated = name.substring(0, 8).concat("...");
 
     console.log(nameUpdated)
+  } 
+  
+  if (name.length <= 8 && name.length > 0) {
+    nameUpdated = name
   }
+
 
   // Updating name string value with character trim
 
@@ -57,6 +65,24 @@ const UserProfile = ({
   
   if (companyUpdated.length > 8) {
     companyUpdated = company.substring(0, 8).concat("...");
+  }
+
+  if (company.length <= 8 && company.length > 0) {
+    companyUpdated = company
+  }
+
+  // Updating location value 
+
+  let locationUpdated = JSON.stringify(location);
+
+  if (location === null) {
+    locationUpdated = "None";
+
+    console.log(locationUpdated, typeof location)
+  } 
+  
+  if (locationUpdated.length > 7) {
+    locationUpdated = location.substring(0, 7).concat("...");
   }
 
   // Updating last update stirng value with character trim
@@ -97,7 +123,7 @@ const UserProfile = ({
           <div className={classes.userProfileStatBox}>
             <div className={classes.userProfileStatBoxContent}>
               <p>Location</p>
-              <h4>{location}</h4>
+              <h4>{locationUpdated}</h4>
             </div>
           </div>
           {/* Last Updated */}
