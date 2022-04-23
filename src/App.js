@@ -7,7 +7,6 @@ import UserProfile from './components/UserProfile';
 const App = () => {
   // state of follower profiles
   const [ profiles, setProfiles ] = useState([]);
-  // const [ profileHasError, setProfileHasError ] = useState(false);
 
   // Import 1 profile on load.
   useEffect(() => {
@@ -50,14 +49,6 @@ const App = () => {
     console.log(input)
 
     fetch(`https://api.github.com/users/${input}`)
-
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not OK');
-      }
-      return response.blob();
-    })
-
     .then(data => data.json())
     .then(databaseData => {
       console.log(databaseData)
@@ -82,11 +73,6 @@ const App = () => {
       }
 
       setProfiles([initialRawProfile]);
-
-      
-    }).catch(error => {
-
-      throw new Error('GitHub account does not exist', error);
     })
 
   }

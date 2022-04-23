@@ -20,6 +20,8 @@ const SearchInput = ({searchEntered}) => {
     console.log(enteredValue)
 
     searchEntered(enteredValue)
+
+    setEnteredValue('')
   }
 
   return (
