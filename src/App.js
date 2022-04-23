@@ -51,13 +51,28 @@ const App = () => {
     fetch(`https://api.github.com/users/${input}`)
     .then(data => data.json())
     .then(databaseData => {
-      console.log(databaseData.followers_url)
+      console.log(databaseData)
 
-      fetch(`${databaseData.followers_url}`)
-      .then(data => data.json())
-      .then(database => {
-        console.log(database)
-      })
+      const initialRawProfile = {
+        login: databaseData.login, 
+        bio: databaseData.bio, 
+        blog: databaseData.blog, 
+        company: databaseData.company,
+        email: databaseData.email,
+        followers: databaseData.followers,
+        following: databaseData.following,
+        followers_url: databaseData.followers_url,
+        location: databaseData.location,
+        id: databaseData.id,
+        name: databaseData.name,
+        public_gists: databaseData.public_gists,
+        public_repos: databaseData.public_repos,
+        twitter_username: databaseData.twitter_username,
+        updated_at: databaseData.updated_at,
+        url: databaseData.html_url,
+      }
+
+      setProfiles([initialRawProfile]);
     })
 
   }
