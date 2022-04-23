@@ -24,7 +24,7 @@ const SearchInput = ({searchEntered}) => {
 
   return (
     <form onSubmit={onSubmitHandler} className={classes.searchContainer}>
-      <input type="text" placeholder="Search for info on someone’s GitHub followers" onChange={onChangeHandler}></input>
+      <input type="text" placeholder="Search anyone's GitHub profile for info" onChange={onChangeHandler}></input>
       <input type="submit" className={classes.searchContainerSubmit} />
     </form>
   )
