@@ -67,8 +67,8 @@ const UserProfile = ({
     companyUpdated = company.substring(0, 8).concat("...");
   }
 
-  if (company.length <= 8 && company.length > 0) {
-    companyUpdated = company
+  if (companyUpdated.length <= 8 && companyUpdated.length > 0) {
+    companyUpdated = companyUpdated.substring(0, 8).concat("...");
   }
 
   // Updating location value 

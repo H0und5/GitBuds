@@ -17,11 +17,11 @@ const SearchInput = ({searchEntered}) => {
   const onSubmitHandler = (event) => {
     event.preventDefault();
 
-    console.log(enteredValue)
+    console.log(event);
 
     searchEntered(enteredValue)
 
-    setEnteredValue('')
+    event.target.reset();
   }
 
   return (
