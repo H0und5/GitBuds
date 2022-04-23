@@ -45,13 +45,23 @@ const UserProfile = ({
 
   // Updating company string value with character trim
 
-  let companyUpdated = company.substring(0, 8).concat("...");
+  let companyUpdated = ''
+
+  if (company === null) {
+    companyUpdated = "None";
+
+    return;
+  }
+  
+  if (company.length > 8) {
+    companyUpdated = company.substring(0, 8) + "...";
+  }
 
   // Updating last update stirng value with character trim
   let lastUpdatedMonth = updated_at.substring(5, 7);
   let lastUpdatedDay = updated_at.substring(8, 10);
 
-  let lastUpdated = lastUpdatedMonth.concat(`/${lastUpdatedDay}`);
+  let lastUpdated = lastUpdatedMonth + '/' + lastUpdatedDay
 
   // Return JSX
   return (
